@@ -2,6 +2,7 @@
 NixOS server configuration files
 
 # To-Do: 
+- [ ] Switch from systemd-boot to GRUB
 - [ ] Setup basic NixOS with flakes and homemanager
 - [ ] Install basic packages (CLI tools)
 - [ ] Create users
