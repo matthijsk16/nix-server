@@ -1,6 +1,6 @@
 {
 
-  description = "NixOS and Home Manager configuration";
+  description = "NixOS server configuration";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.05";

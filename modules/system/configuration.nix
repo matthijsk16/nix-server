@@ -38,7 +38,6 @@
     enable = true;
     defaultEditor = true;
   };
-  # programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs; [
     neovim  # EDITOR
@@ -46,7 +45,7 @@
     wget    # download files
     zoxide  # cd with superpowers
     git     # version control
-    less
+    less    # pager for piping
   ];
 
   # Enable networking
