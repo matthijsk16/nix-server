@@ -5,21 +5,28 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
+  imports = [
       ./hardware-configuration.nix
-    ];
+      ../../modules/default.nix
+  ];
 
+  modules = {
+    tmux = { enable = true; plugins = [pkgs.tmuxPlugins.better-mouse-mode]; };
+    ssh.enable = true;
+  };
+    
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.bois = {
-    isNormalUser = true;
-    description = "De Bois";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+  users.users = {
+    bois = {
+      isNormalUser = true;
+      description = "De Bois";
+      extraGroups = [ "networkmanager" "wheel" ];
+      packages = with pkgs; [];
+    };
   };
 
   # List services that you want to enable:

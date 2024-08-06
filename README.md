@@ -4,11 +4,11 @@ NixOS server configuration files
 # To-Do: 
 - [X] Switch from systemd-boot to GRUB
 - [X] Setup basic NixOS with flakes
-- [ ] Install basic packages (CLI tools)
-- [ ] Create users
-- [ ] Cloudflare tunnel
-- [ ] Setup Pelican panel
+- [X] Install basic packages (CLI tools)
+- [X] Create users
+- [ ] Cloudflare tunnel (Not working!)
 - [ ] Setup Pelican wings
+- [ ] Setup Pelican panel
 - [ ] Test game servers 
 - [ ] Fix NAS and mountpoints
 - [ ] Setup Plex

@@ -3,7 +3,7 @@
 {
   imports =
     [ 
-     # system
-     ./bois-server/configuration.nix
+     # hosts
+     ./bois-server
     ];
 }

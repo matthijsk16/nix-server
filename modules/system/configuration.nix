@@ -34,7 +34,10 @@
 
   environment.shells = [ pkgs.bash ];
   users.defaultUserShell = pkgs.bash;
-  # programs.zsh.enable = true;
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
 
   environment.systemPackages = with pkgs; [
     neovim  # EDITOR
@@ -42,6 +45,7 @@
     wget    # download files
     zoxide  # cd with superpowers
     git     # version control
+    less    # pager for piping
   ];
 
   # Enable networking
@@ -71,11 +75,6 @@
     enable = true;
     enableSSHSupport = true;
   };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   system.stateVersion = "24.05"; # Did you read the comment?
 
