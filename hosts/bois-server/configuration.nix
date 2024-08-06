@@ -12,7 +12,7 @@
 
   modules = {
     tmux = { enable = true; plugins = [pkgs.tmuxPlugins.better-mouse-mode]; };
-    cloudflared.enable = true;
+    cloudflared.enable = false;
     ssh.enable = true;
   };
     
