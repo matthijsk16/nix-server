@@ -9,7 +9,7 @@ in
 
     defaultEditor = mkOption {
       type = types.str;
-      default = environment.variables.EDITOR or "nano";
+      default = pkgs.options.environment.variables.EDITOR or "nano";
       description = ''
         The default editor to use when opening a new window or pane.
       '';
