@@ -46,6 +46,7 @@
     wget    # download files
     zoxide  # cd with superpowers
     git     # version control
+    less
   ];
 
   # Enable networking
