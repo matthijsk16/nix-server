@@ -41,7 +41,6 @@ stdenv.mkDerivation rec {
     '';
     homepage = "https://pelican.dev/";
     license = licenses.mit;
-    license = licenses.gnupg;
     platforms = platforms.unix;
   };
 }
