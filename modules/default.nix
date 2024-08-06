@@ -4,7 +4,7 @@
   imports = [ 
     # system
     ./system/configuration.nix
-    ./kaas
+    ./ssh
 
     # CLI
     ./tmux
