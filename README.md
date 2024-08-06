@@ -7,8 +7,8 @@ NixOS server configuration files
 - [X] Install basic packages (CLI tools)
 - [X] Create users
 - [ ] Cloudflare tunnel
-- [ ] Setup Pelican panel
 - [ ] Setup Pelican wings
+- [ ] Setup Pelican panel
 - [ ] Test game servers 
 - [ ] Fix NAS and mountpoints
 - [ ] Setup Plex
