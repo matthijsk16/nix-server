@@ -1,20 +1,20 @@
-{ stdenv, lib, fetchurl, gnutar, php83, composer, mysql84 }:
+{ stdenv, lib, fetchurl, gnutar, php83, mysql84 }:
 # pkgs.php83Packages.composer
 stdenv.mkDerivation rec {
   pname = "pelican-panel";
   version = "1.0.0-beta7";
 
-  src = fetchurl {
-    url = "https://github.com/pelican-dev/panel/releases/download/v${version}/panel.tar.gz";
-    sha256 = "sha256-ZQW4BNIa0+fMrSzAMbvJIsFMm4kVjEJEzb4BLvjvZiI=";
-  };
-
-  # src = fetchFromGitHub {
-  #   owner = "pelican-dev";
-  #   repo = "panel";
-  #   rev = "953ee940aa5955dfdad452dbdc46f48ca5e5bb55";
+  # src = fetchurl {
+  #   url = "https://github.com/pelican-dev/panel/releases/download/v${version}/panel.tar.gz";
   #   sha256 = "sha256-ZQW4BNIa0+fMrSzAMbvJIsFMm4kVjEJEzb4BLvjvZiI=";
   # };
+
+  src = fetchFromGitHub {
+    owner = "pelican-dev";
+    repo = "panel";
+    rev = "953ee940aa5955dfdad452dbdc46f48ca5e5bb55";
+    sha256 = "sha256-ZQW4BNIa0+fMrSzAMbvJIsFMm4kVjEJEzb4BLvjvZiI=";
+  };
 
   dontBuild = true;
   buildInputs = [ gnutar ];
@@ -29,7 +29,7 @@ stdenv.mkDerivation rec {
   #   composer install --no-dev --optimize-autoloader
   # '';
 
-  propagatedBuildInputs = [ php83 composer ];
+  propagatedBuildInputs = [ php83 ];
 
   meta = with lib; {
     description = ''
