@@ -9,6 +9,13 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-ZQW4BNIa0+fMrSzAMbvJIsFMm4kVjEJEzb4BLvjvZiI=";
   };
 
+  # src = fetchFromGitHub {
+  #   owner = "pelican-dev";
+  #   repo = "panel";
+  #   rev = "v${version}";
+  #   sha256 = "sha256-ZQW4BNIa0+fMrSzAMbvJIsFMm4kVjEJEzb4BLvjvZiI=";
+  # };
+
   dontBuild = true;
   buildInputs = [ gnutar ];
 
@@ -34,6 +41,7 @@ stdenv.mkDerivation rec {
     '';
     homepage = "https://pelican.dev/";
     license = licenses.mit;
+    license = licenses.gnupg;
     platforms = platforms.unix;
   };
 }
