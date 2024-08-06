@@ -1,4 +1,4 @@
-{ stdenv, lib, fetchurl, gnutar, pkgs, php83, mysql84 }:
+{ stdenv, lib, fetchurl, gnutar, pkgs, mysql84 }:
 # pkgs.php83Packages.composer
 stdenv.mkDerivation rec {
   pname = "pelican-panel";
@@ -22,7 +22,7 @@ stdenv.mkDerivation rec {
   #   composer install --no-dev --optimize-autoloader
   # '';
 
-  propagatedBuildInputs = [ php83 pkgs.php83Packages.composer ];
+  propagatedBuildInputs = with pkgs; [ php83 php83Packages.composer ];
 
   meta = with lib; {
     description = ''
