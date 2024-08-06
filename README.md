@@ -27,11 +27,11 @@ NixOS server configuration files
 
 | Label    	| Size   	| Mountpoint 	| Format 	|
 |----------	|--------	|------------	|--------	|
-| NIX-BOOT 	| 1 GB   	| /boot      	| FAT32  	|
-| NIX-ROOT 	| 249 GB 	| /          	| Ext4   	|
+| NIX_BOOT 	| 1 GB   	| /boot      	| FAT32  	|
+| NIX_ROOT 	| 249 GB 	| /          	| Ext4   	|
 
 - SSD 1000 GB
 
 | Label    	| Size    	| Mountpoint 	| Format 	|
 |----------	|---------	|------------	|--------	|
-| NIX-HOME 	| 1000 GB 	| /home      	| Ext4   	|
+| NIX_HOME 	| 1000 GB 	| /home      	| Ext4   	|
