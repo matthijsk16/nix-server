@@ -15,7 +15,7 @@
     ssh.enable = true;
   };
     
-  pkgs.config.packageOverrides = pkgs: {
+  nixpkgs.config.packageOverrides = pkgs: {
     pelican-panel = pkgs.callPackage ../../modules/pelican-panel/derivation.nix {};
   };
 
