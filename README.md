@@ -6,7 +6,7 @@ NixOS server configuration files
 - [X] Setup basic NixOS with flakes
 - [X] Install basic packages (CLI tools)
 - [X] Create users
-- [ ] Cloudflare tunnel
+- [ ] Cloudflare tunnel (Not working!)
 - [ ] Setup Pelican wings
 - [ ] Setup Pelican panel
 - [ ] Test game servers 
