@@ -1,15 +1,15 @@
 { inputs, pkgs, config, ... }:
 
 {
-  imports =
-    [ 
-     # system
-     ./system/configuration.nix
+  imports = [ 
+    # system
+    ./system/configuration.nix
+    ./ssh 
 
-     # CLI
-     ./tmux
+    # CLI
+    ./tmux
 
-     # tunnel
-     ./cloudflared
+    # tunnel
+    ./cloudflared
     ];
 }
