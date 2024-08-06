@@ -8,5 +8,8 @@
 
      # CLI
      ./tmux
+
+     # tunnel
+     ./cloudflared
     ];
 }
