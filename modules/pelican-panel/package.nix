@@ -13,7 +13,7 @@ stdenv.mkDerivation rec {
     owner = "pelican-dev";
     repo = "panel";
     rev = "953ee940aa5955dfdad452dbdc46f48ca5e5bb55";
-    sha256 = "sha256-ZQW4BNIa0+fMrSzAMbvJIsFMm4kVjEJEzb4BLvjvZiI=";
+    sha256 = "sha256-h0+6rDy7U24XEdqAnfd8Q77VE8Ji2llSxy/vQawPQw4=";
   };
 
   dontBuild = true;
