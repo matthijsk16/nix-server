@@ -7,11 +7,27 @@ in
   options.modules.tmux = {
     enable = mkEnableOption "tmux";
 
-    defaultEditor = mkOption {
+    keyMode = mkOption {
       type = types.str;
-      default = pkgs.options.environment.variables.EDITOR or "nano";
+      default = "vi";
       description = ''
         The default editor to use when opening a new window or pane.
+      '';
+    };
+
+    clock24 = mkOption {
+      type = types.bool;
+      default = true;
+      description = ''
+        Use 24h clock mode.
+      '';
+    };
+
+    newSession = mkOption {
+      type = types.bool;
+      default = true;
+      description = ''
+        Automatically create a new session when tmux is started.
       '';
     };
 
@@ -42,7 +58,9 @@ in
 
   config = mkIf cfg.enable {
     programs.tmux = {
-        defaultEditor = cfg.defaultEditor;
+        keyMode = cfg.keyMode;
+        clock24 = cfg.clock24;
+        newSession = cfg.newSession;
         baseIndex = cfg.baseIndex;
         escapeTime = cfg.escapeTime;
 
