@@ -17,7 +17,7 @@ in
                 "8b288ee8-ca9a-45d6-8b94-57768fa309e0" = {
                     credentialsFile = "./testkey.json";
                     default = "http_status:404";
-                    ingress.${domain}.service = "ssh://localhost:22";
+                    # ingress.${domain}.service = "ssh://localhost:22";
                 };
             };
         };
