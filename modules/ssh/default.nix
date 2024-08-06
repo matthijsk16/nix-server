@@ -1,11 +1,11 @@
 { inputs, lib, config, pkgs, ... }:
 with lib;
 let
-  cfg = config.modules.kaas;
+  cfg = config.modules.ssh;
 in
 {
-  options.modules.kaas = {
-    enable = mkEnableOption "kaas";
+  options.modules.ssh = {
+    enable = mkEnableOption "ssh";
 
     passwordAuthentication = mkOption {
       type = types.bool;
