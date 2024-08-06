@@ -4,7 +4,7 @@
   imports =
     [ 
      # system
-     ./system
+     ./system/configuration.nix
 
      # CLI
      ./tmux
