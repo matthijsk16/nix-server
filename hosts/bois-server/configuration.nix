@@ -27,7 +27,7 @@
     packages = with pkgs; [];
   };
   users.users.cloudflared = {
-    isNormalUser = true;
+    isSystemUser = true;
     description = "Cloudflared";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
