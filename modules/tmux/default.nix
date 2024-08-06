@@ -58,6 +58,7 @@ in
 
   config = mkIf cfg.enable {
     programs.tmux = {
+        enable = true;
         keyMode = cfg.keyMode;
         clock24 = cfg.clock24;
         newSession = cfg.newSession;
