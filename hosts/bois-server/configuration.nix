@@ -3,7 +3,9 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
+let
+pelican-panel = pkgs.callPackage ../../modules/pelican-panel/derivation.nix {};
+in
 {
   imports = [
       ./hardware-configuration.nix
@@ -15,9 +17,9 @@
     ssh.enable = true;
   };
     
-  nixpkgs.config.packageOverrides = pkgs: {
-    pelican-panel = pkgs.callPackage ../../modules/pelican-panel/derivation.nix {};
-  };
+  # nixpkgs.config.packageOverrides = pkgs: {
+  #   pelican-panel = pkgs.callPackage ../../modules/pelican-panel/derivation.nix {};
+  # };
 
   environment.systemPackages = with pkgs; [
     pelican-panel
