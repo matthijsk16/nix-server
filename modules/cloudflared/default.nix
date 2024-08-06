@@ -2,7 +2,6 @@
 with lib;
 let
     cfg = config.modules.cloudflared;
-    domain = "hubclup.nl";
 in
 {
     options.modules.cloudflared = {
@@ -10,28 +9,24 @@ in
     };
 
     config = mkIf cfg.enable {
-
         environment.systemPackages = with pkgs; [
             cloudflared
         ];
 
-        # users.users.cloudflared = {
-        #     isSystemUser = true;
-        #     home = "/var/lib/cloudflared";
-        #     description = "Cloudflared user";
-        #     createHome = true;
-        #     shell = pkgs.bashInteractive;
-        # };
-        
-        services.cloudflared = {
-            enable = true;
-            user = "cloudflared";
-            tunnels = {
-                "8b288ee8-ca9a-45d6-8b94-57768fa309e0" = {
-                    credentialsFile = "./testkey.json";
-                    default = "http_status:404";
-                    # ingress.${domain}.service = "ssh://localhost:22";
-                };
+        users.users.cloudflared = {
+            group = "cloudflared";
+            isSystemUser = true;
+        };
+        users.groups.cloudflared = { };
+
+        systemd.services.my_tunnel = {
+            wantedBy = [ "multi-user.target" ];
+            after = [ "network.target" ];
+            serviceConfig = {
+                ExecStart = "${pkgs.cloudflared}/bin/cloudflared tunnel --no-autoupdate run --token=eyJhIjoiZTFhYTBjMTUyMzU5MTUzNzhlYWVlMTJiMGYwZjg1NTgiLCJ0IjoiOGIyODhlZTgtY2E5YS00NWQ2LThiOTQtNTc3NjhmYTMwOWUwIiwicyI6Ik5qSTRNemRoWlRBdE1qVXlPUzAwTldZMUxUaG1aVGt0WTJRMVlXRXlOakV4WW1WbCJ9";
+                Restart = "always";
+                User = "cloudflared";
+                Group = "cloudflared";
             };
         };
     };
