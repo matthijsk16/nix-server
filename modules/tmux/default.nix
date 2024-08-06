@@ -48,7 +48,7 @@ in
     };
 
     plugins = mkOption {
-      type = types.listOf types.packages;
+      type = types.listOf types.package;
       default = [];
       description = ''
         A list of plugins to install.
