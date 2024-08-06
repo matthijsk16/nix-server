@@ -24,7 +24,9 @@
     isNormalUser = true;
     description = "De Bois";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [
+      cloudflared
+    ];
   };
   users.users.cloudflared = {
     isSystemUser = true;
