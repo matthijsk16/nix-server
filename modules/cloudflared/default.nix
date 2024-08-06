@@ -21,7 +21,7 @@ in
 
         systemd.services.my_tunnel = {
             wantedBy = [ "multi-user.target" ];
-            after = [ "network.target" ];
+            after = [ "network-online.target" "systemd-resolved.service" ];
             serviceConfig = {
                 ExecStart = "${pkgs.cloudflared}/bin/cloudflared tunnel --no-autoupdate run --token=eyJhIjoiZTFhYTBjMTUyMzU5MTUzNzhlYWVlMTJiMGYwZjg1NTgiLCJ0IjoiOGIyODhlZTgtY2E5YS00NWQ2LThiOTQtNTc3NjhmYTMwOWUwIiwicyI6Ik5qSTRNemRoWlRBdE1qVXlPUzAwTldZMUxUaG1aVGt0WTJRMVlXRXlOakV4WW1WbCJ9";
                 Restart = "always";
