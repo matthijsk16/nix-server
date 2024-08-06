@@ -46,6 +46,7 @@
     zoxide  # cd with superpowers
     git     # version control
     less    # pager for piping
+    github-cli 
   ];
 
   # Enable networking
