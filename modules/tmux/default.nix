@@ -48,7 +48,7 @@ in
     };
 
     plugins = mkOption {
-      type = types.listOf types.str;
+      type = types.listOf types.tmuxPlugins;
       default = [];
       description = ''
         A list of plugins to install.
