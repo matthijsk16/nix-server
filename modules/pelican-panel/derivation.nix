@@ -15,7 +15,7 @@ stdenv.mkDerivation rec {
   unpackPhase = ''
     mkdir -p $out/var/www/pelican
     cd $out/var/www/pelican
-    gnutar -xzf $src
+    tar -xzf $src
   '';
 
   # installPhase = ''
