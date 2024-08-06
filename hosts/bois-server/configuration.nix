@@ -11,7 +11,7 @@
   ];
 
   modules = {
-    tmux = { enable = true; plugins = [tmuxPlugins.better-mouse-mode]; };
+    tmux = { enable = true; plugins = [pkgs.tmuxPlugins.better-mouse-mode]; };
   };
     
   # Configure network proxy if necessary
