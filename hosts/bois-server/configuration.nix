@@ -13,7 +13,7 @@
   modules = {
     tmux = { enable = true; plugins = [pkgs.tmuxPlugins.better-mouse-mode]; };
     cloudflared.enable = true;
-    shh.enable = true;
+    kaas.enable = true;
   };
     
   # Configure network proxy if necessary
