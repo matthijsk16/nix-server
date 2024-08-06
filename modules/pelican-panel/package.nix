@@ -29,7 +29,7 @@ stdenv.mkDerivation rec {
   #   composer install --no-dev --optimize-autoloader
   # '';
 
-  propagatedBuildInputs = [ php83 php83Packages.composer ];
+  propagatedBuildInputs = [ php83 composer ];
 
   meta = with lib; {
     description = ''
