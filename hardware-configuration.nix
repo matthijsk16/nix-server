@@ -17,13 +17,13 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-label/NIX-BOOT";
+    { device = "/dev/disk/by-label/NIX_BOOT";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-label/NIX-HOME";
+    { device = "/dev/disk/by-label/NIX_HOME";
       fsType = "ext4";
     };
 
