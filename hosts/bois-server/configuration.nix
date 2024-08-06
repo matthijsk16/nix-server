@@ -27,12 +27,6 @@
       extraGroups = [ "networkmanager" "wheel" ];
       packages = with pkgs; [];
     };
-    cloudflared = {
-      isSystemUser = true;
-      description = "Cloudflared";
-      extraGroups = [ "networkmanager" "wheel" ];
-      packages = with pkgs; [];
-    };
   };
 
   # List services that you want to enable:
