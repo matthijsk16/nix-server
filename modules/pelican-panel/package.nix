@@ -1,4 +1,4 @@
-{ stdenv, lib, fetchurl, gnutar, php83, mysql84 }:
+{ stdenv, lib, fetchFromGitHub, gnutar, php83, mysql84 }:
 # pkgs.php83Packages.composer
 stdenv.mkDerivation rec {
   pname = "pelican-panel";
