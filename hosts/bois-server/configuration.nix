@@ -24,6 +24,12 @@
     isNormalUser = true;
     description = "De Bois";
     extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [];
+  };
+  users.users.cloudflared = {
+    isNormalUser = true;
+    description = "Cloudflared";
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       cloudflared
     ];
