@@ -12,7 +12,7 @@ stdenv.mkDerivation rec {
   # src = fetchFromGitHub {
   #   owner = "pelican-dev";
   #   repo = "panel";
-  #   rev = "v${version}";
+  #   rev = "953ee940aa5955dfdad452dbdc46f48ca5e5bb55";
   #   sha256 = "sha256-ZQW4BNIa0+fMrSzAMbvJIsFMm4kVjEJEzb4BLvjvZiI=";
   # };
 
