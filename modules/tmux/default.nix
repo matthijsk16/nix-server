@@ -46,7 +46,7 @@ in
         baseIndex = cfg.baseIndex;
         escapeTime = cfg.escapeTime;
 
-        plugins = with pkgs; cfg.plugins;
+        plugins = cfg.plugins;
       };
   };
 }
