@@ -5,7 +5,7 @@ NixOS server configuration files
 - [X] Switch from systemd-boot to GRUB
 - [X] Setup basic NixOS with flakes
 - [X] Install basic packages (CLI tools)
-- [ ] Create users
+- [X] Create users
 - [ ] Cloudflare tunnel
 - [ ] Setup Pelican panel
 - [ ] Setup Pelican wings

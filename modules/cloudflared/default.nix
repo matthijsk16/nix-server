@@ -10,9 +10,19 @@ in
     };
 
     config = mkIf cfg.enable {
+
         environment.systemPackages = with pkgs; [
             cloudflared
         ];
+
+        # users.users.cloudflared = {
+        #     isSystemUser = true;
+        #     home = "/var/lib/cloudflared";
+        #     description = "Cloudflared user";
+        #     createHome = true;
+        #     shell = pkgs.bashInteractive;
+        # };
+        
         services.cloudflared = {
             enable = true;
             user = "cloudflared";
