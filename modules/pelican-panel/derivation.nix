@@ -6,7 +6,7 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "https://github.com/pelican-dev/panel/releases/download/v${version}/panel.tar.gz";
-    sha256 = "0000000000000000000000000000000000000000000000000000";
+    sha256 = "sha256-ZQW4BNIa0+fMrSzAMbvJIsFMm4kVjEJEzb4BLvjvZiI=";
   };
 
   dontBuild = true;
