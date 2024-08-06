@@ -33,7 +33,7 @@ stdenv.mkDerivation rec {
        they all run in their own safe space.
     '';
     homepage = "https://pelican.dev/";
-    license = licenses.gnupg;
+    license = licenses.mit;
     platforms = platforms.unix;
   };
 }
