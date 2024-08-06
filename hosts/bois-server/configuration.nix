@@ -12,7 +12,7 @@
 
   modules = {
     tmux = { enable = true; plugins = [pkgs.tmuxPlugins.better-mouse-mode]; };
-    cloudflared = { enable = true; };
+    cloudflared.enable = true;
   };
     
   # Configure network proxy if necessary
@@ -20,21 +20,19 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.bois = {
-    isNormalUser = true;
-    description = "De Bois";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      cloudflared
-    ];
-  };
-  users.users.cloudflared = {
-    isSystemUser = true;
-    description = "Cloudflared";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      cloudflared
-    ];
+  users.users = {
+    bois = {
+      isNormalUser = true;
+      description = "De Bois";
+      extraGroups = [ "networkmanager" "wheel" ];
+      packages = with pkgs; [];
+    };
+    cloudflared = {
+      isSystemUser = true;
+      description = "Cloudflared";
+      extraGroups = [ "networkmanager" "wheel" ];
+      packages = with pkgs; [];
+    };
   };
 
   # List services that you want to enable:

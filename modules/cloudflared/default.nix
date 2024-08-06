@@ -10,6 +10,9 @@ in
     };
 
     config = mkIf cfg.enable {
+        environment.systemPackages = with pkgs; [
+            cloudflared
+        ];
         services.cloudflared = {
             enable = true;
             user = "cloudflared";

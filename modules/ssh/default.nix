@@ -21,13 +21,9 @@ in
         enable = true;
         ports = [ 22 ];
 
-
-
         settings = {
           PasswordAuthentication = cfg.passwordAuthentication;
         };
-
-
       };
   };
 }
