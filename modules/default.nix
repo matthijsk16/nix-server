@@ -4,6 +4,9 @@
   imports =
     [ 
      # system
-     ./system/configuration.nix
+     ./system
+
+     # CLI
+     ./tmux
     ];
 }

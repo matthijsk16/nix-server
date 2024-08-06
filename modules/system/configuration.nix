@@ -34,6 +34,10 @@
 
   environment.shells = [ pkgs.bash ];
   users.defaultUserShell = pkgs.bash;
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
   # programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs; [
