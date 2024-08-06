@@ -19,7 +19,7 @@
     pelican-panel = pkgs.callPackage ../../modules/pelican-panel/derivation.nix {};
   };
 
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     pelican-panel
   ];
 
