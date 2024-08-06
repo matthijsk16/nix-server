@@ -18,9 +18,9 @@ stdenv.mkDerivation rec {
     tar -xzf $src
   '';
 
-  # installPhase = ''
-  #   composer install --no-dev --optimize-autoloader
-  # '';
+  installPhase = ''
+    composer install --no-dev --optimize-autoloader
+  '';
 
   propagatedBuildInputs = with pkgs; [ php83 php83Packages.composer mysql84 ];
 
