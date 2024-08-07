@@ -13,7 +13,7 @@
     };
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     # Open ports in the firewall.
     networking.firewall.allowedTCPPorts = [ 80 443 ];
     # networking.firewall.allowedUDPPorts = [ ... ];
