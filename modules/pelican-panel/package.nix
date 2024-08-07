@@ -1,4 +1,4 @@
-{ lib, php83, fetchFromGitHub }:
+{ lib, php83, fetchFromGitHub, fpm }:
 
 php83.buildComposerProject (finalAttrs: {
   pname = "ppelican-panel";
@@ -11,6 +11,8 @@ php83.buildComposerProject (finalAttrs: {
     hash = "sha256-h0+6rDy7U24XEdqAnfd8Q77VE8Ji2llSxy/vQawPQw4=";
   };
 
+  # buildInputs = [ fpm ];
+
   php83 = php83.buildEnv {
     extensions = ({ enabled, all }: enabled ++ (with all; [
       gd
@@ -22,7 +24,7 @@ php83.buildComposerProject (finalAttrs: {
       zip
       intl
       sqlite3
-      # fpm
+      fpm
     ]));
   };
 
