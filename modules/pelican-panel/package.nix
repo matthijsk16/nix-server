@@ -14,7 +14,7 @@ php83.buildComposerProject (finalAttrs: {
   php83 = php83.buildEnv {
     extensions = ({ enabled, all }: enabled ++ (with all; [
       gd
-      mysql
+      # mysql
       mbstring
       bcmath
       xml
