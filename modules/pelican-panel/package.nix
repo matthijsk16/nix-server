@@ -1,61 +1,34 @@
-{ stdenv, lib, fetchurl, curl, gnutar, pkgs }:
+{ php83, fetchFromGitHub }:
 
-
-# with import <nixpkgs> { };
-
-# pkgs.php83Packages.composer
-stdenv.mkDerivation rec {
-  pname = "pelican-panel";
+php83.buildComposerProject (finalAttrs: {
+  pname = "ppelican-panel";
   version = "1.0.0-beta7";
 
-  src = fetchurl {
-    url = "https://github.com/pelican-dev/panel/releases/download/v${version}/panel.tar.gz";
-    sha256 = "sha256-ZQW4BNIa0+fMrSzAMbvJIsFMm4kVjEJEzb4BLvjvZiI=";
+  src = fetchFromGitHub {
+    owner = "pelican-dev";
+    repo = "panel";
+    rev = finalAttrs.version;  # v1.0.0-beta7
+    hash = "sha256-VcQRSss2dssfkJ+iUb5qT+FJ10GHiFDzySigcmuVI+8=";
   };
 
-  dontBuild = true;
-  buildInputs = [ curl gnutar ];
-
-  unpackPhase = ''
-    mkdir -p $out/var/www/pelican
-    cd $out/var/www/pelican
-    tar -xzf $src
-  '';
-
-  installPhase = ''
-    composer config -g repo.packagist composer https://packagist.org
-    cd $out/var/www/pelican
-    composer update
-    composer install --no-dev --optimize-autoloader -H
-  '';
-
-  propagatedBuildInputs = with pkgs; [
-    php83
-    php83Packages.composer 
-    mysql84 
-  ] ++ (with pkgs.php83Extensions; [
-        gd
-        mysql
-        mbstring
-        bcmath
-        xml
-        curl
-        zip
-        intl
-        sqlite3
-        fpm
-  ]);
-
-  meta = with lib; {
-    description = ''
-      Pelican is the ultimate, 
-      free game server control panel offering high flying security. 
-      It's a breeze to manage your servers with our sleek and
-       user-friendly interface. And thanks to Docker, 
-       they all run in their own safe space.
-    '';
-    homepage = "https://pelican.dev/";
-    license = licenses.mit;
-    platforms = platforms.unix;
+  php83 = php83.buildEnv {
+    extensions = ({ enabled, all }: enabled ++ (with all; [
+      gd
+      mysql
+      mbstring
+      bcmath
+      xml
+      curl
+      zip
+      intl
+      sqlite3
+      fpm
+    ]));
   };
-}
+
+  # The composer vendor hash
+  vendorHash = "sha256-86s/F+/5cBAwBqZ2yaGRM5rTGLmou5//aLRK5SA0WiQ=";
+
+  # If the composer.lock file is missing from the repository, add it:
+  # composerLock = ./path/to/composer.lock;
+})
