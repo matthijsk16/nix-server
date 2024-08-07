@@ -2,7 +2,7 @@
 
 php83.buildComposerProject (finalAttrs: {
   pname = "ppelican-panel";
-  version = "v1.0.0-beta6";
+  version = "v1.0.0-beta7";
 
   src = fetchFromGitHub {
     owner = "pelican-dev";
