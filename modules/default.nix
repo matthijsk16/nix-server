@@ -9,6 +9,9 @@
     # CLI
     ./tmux
 
+    # Webserver
+    ./nginx
+
     # tunnel
     ./cloudflared
     ];

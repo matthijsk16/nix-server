@@ -15,6 +15,7 @@ in
   modules = {
     tmux = { enable = true; plugins = [pkgs.tmuxPlugins.better-mouse-mode]; };
     ssh.enable = true;
+    nginx.enable = true;
   };
     
   # nixpkgs.config.packageOverrides = pkgs: {
