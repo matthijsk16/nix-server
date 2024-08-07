@@ -9,7 +9,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    services.nginxvirtualHosts."kaasbois.nl" = {
+    services.nginx.virtualHosts."kaasbois.nl" = {
         # addSSL = true;
         # enableACME = true;
         root = "/var/www/kaasbois.nl/";
