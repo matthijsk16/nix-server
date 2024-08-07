@@ -12,10 +12,10 @@ in
     # Open ports in the firewall.
     networking.firewall.allowedTCPPorts = [ 80 443 ];
     # networking.firewall.allowedUDPPorts = [ ... ];
-    
+    systemd.services.nginx.serviceConfig.ProtectHome = "read-only";
     services.nginx = {
       enable = true;
-      serviceConfig.ProtectHome = "read-only";
+      
       virtualHosts = {
         "kaasbois.nl" = {
           # addSSL = true;
