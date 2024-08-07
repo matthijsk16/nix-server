@@ -27,10 +27,12 @@ stdenv.mkDerivation rec {
   '';
 
   propagatedBuildInputs = with pkgs; [
-    (php83.buildEnv {
-      extensions = ({enabled, all}: enabled ++ (with all; [
-        # gd
-        mysql
+    php83
+    php83Packages.composer 
+    mysql84 
+  ] ++ (with pkgs.php83Extensions; [
+        php-gd
+        php-mysql
         # mbstring
         # bcmath
         # xml
@@ -39,11 +41,7 @@ stdenv.mkDerivation rec {
         # intl
         # sqlite3
         # fpm
-      ]));
-    })
-    php83Packages.composer 
-    mysql84 
-  ];
+  ]);
 
   meta = with lib; {
     description = ''
