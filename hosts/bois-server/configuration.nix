@@ -17,6 +17,10 @@ in
     ssh.enable = true;
     nginx.enable = true;
   };
+
+  modules.nginx = {
+    index.enable = true;
+  };
     
   # nixpkgs.config.packageOverrides = pkgs: {
   #   pelican-panel = pkgs.callPackage ../../modules/pelican-panel/derivation.nix {};

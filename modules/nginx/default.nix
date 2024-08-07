@@ -4,6 +4,10 @@ let
   cfg = config.modules.nginx;
 in
 {
+  imports = [
+    ./modules/index.nix
+  ];
+
   options.modules.nginx = {
     enable = mkEnableOption "Enable nginx";
   };
@@ -14,17 +18,7 @@ in
     # networking.firewall.allowedUDPPorts = [ ... ];
     # systemd.services.nginx.serviceConfig.ProtectHome = "read-only";
     # users.users.bois.homeMode = 750;
-    services.nginx = {
-      enable = true;
-      
-      virtualHosts = {
-        "kaasbois.nl" = {
-          # addSSL = true;
-          # enableACME = true;
-          root = "/var/www/kaasbois.nl/";
-        };
-      };
-    };
+    services.nginx.enable = true;
 #     security.acme = {
 #       acceptTerms = true;
 #       default.email = "admin@kaasbois.nl";
