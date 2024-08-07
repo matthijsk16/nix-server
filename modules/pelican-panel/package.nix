@@ -26,8 +26,7 @@ stdenv.mkDerivation rec {
     composer install --no-dev --optimize-autoloader
   '';
 
-  propagatedBuildInputs = with pkgs; [ 
-    php83
+  propagatedBuildInputs = with pkgs; [
     (php83.buildEnv {
       extensions = ({enabled, all}: enabled ++ (with all; [
         gd
