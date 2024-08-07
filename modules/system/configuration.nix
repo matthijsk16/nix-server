@@ -47,6 +47,7 @@
     git     # version control
     less    # pager for piping
     github-cli 
+    nix-prefetch
   ];
 
   # Enable networking
