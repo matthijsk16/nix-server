@@ -4,7 +4,7 @@ let
 in
 {
   options.modules.ssh = {
-    enable = mkEnableOption "ssh";
+    enable = lib.mkEnableOption "ssh";
 
     passwordAuthentication = mkOption {
       type = types.bool;
