@@ -20,6 +20,7 @@ in
 
   modules.nginx = {
     index.enable = true;
+    pelican-panel.enable = true;
   };
     
   # nixpkgs.config.packageOverrides = pkgs: {

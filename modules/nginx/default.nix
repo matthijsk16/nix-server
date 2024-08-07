@@ -6,6 +6,7 @@ in
 {
   imports = [
     ./modules/index.nix
+    ./modules/pelican-panel.nix
   ];
 
   options.modules.nginx = {
@@ -13,12 +14,12 @@ in
   };
 
   config = mkIf cfg.enable {
+    services.nginx.enable = true;
+
     # Open ports in the firewall.
     networking.firewall.allowedTCPPorts = [ 80 443 ];
-    # networking.firewall.allowedUDPPorts = [ ... ];
-    # systemd.services.nginx.serviceConfig.ProtectHome = "read-only";
-    # users.users.bois.homeMode = 750;
-    services.nginx.enable = true;
+
+    # Setup SSL
 #     security.acme = {
 #       acceptTerms = true;
 #       default.email = "admin@kaasbois.nl";
