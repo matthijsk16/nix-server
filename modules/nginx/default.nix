@@ -22,14 +22,14 @@
       enable = true;
       virtualHosts = {
         "kaasbois.nl" = {
-          addSSL = true;
-          enableACME = true;
+          # addSSL = true;
+          # enableACME = true;
           root = ".";
         };
       };
     };
-    security.acme = {
-      acceptTerms = true;
-      default.email = "admin@kaasbois.nl";
-  };
+#     security.acme = {
+#       acceptTerms = true;
+#       default.email = "admin@kaasbois.nl";
+#   };
 }
