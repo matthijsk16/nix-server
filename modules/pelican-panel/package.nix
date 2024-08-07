@@ -29,16 +29,16 @@ stdenv.mkDerivation rec {
   propagatedBuildInputs = with pkgs; [
     (php83.buildEnv {
       extensions = ({enabled, all}: enabled ++ (with all; [
-        gd
+        # gd
         mysql
-        mbstring
-        bcmath
-        xml
-        curl
-        zip
-        intl
-        sqlite3
-        fpm
+        # mbstring
+        # bcmath
+        # xml
+        # curl
+        # zip
+        # intl
+        # sqlite3
+        # fpm
       ]));
     })
     php83Packages.composer 
