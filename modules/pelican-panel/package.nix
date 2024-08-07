@@ -14,7 +14,7 @@ php83.buildComposerProject (finalAttrs: {
   php83 = php83.buildEnv {
     extensions = ({ enabled, all }: enabled ++ (with all; [
       gd
-      mysql
+      pdo_mysql
       mbstring
       bcmath
       xml
@@ -22,7 +22,7 @@ php83.buildComposerProject (finalAttrs: {
       zip
       intl
       sqlite3
-      fpm
+      # fpm
     ]));
   };
 
