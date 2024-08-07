@@ -20,7 +20,6 @@ in
           # addSSL = true;
           # enableACME = true;
           root = "/home/bois/nix-server/modules/nginx/";
-          index = "index.html";
         };
       };
     };
