@@ -6,9 +6,22 @@ NixOS server configuration files
 - [X] Setup basic NixOS with flakes
 - [X] Install basic packages (CLI tools)
 - [X] Create users
-- [ ] Cloudflare tunnel (Not working!)
-- [ ] Setup Pelican wings
+- [X] Cloudflare tunnel (Not possible without clientside install!)
+- [ ] Setup basic NGINX server
+  - [ ] Create basic homepage 
+  - [ ] Create SSL Certificate(s) with auto renewal
 - [ ] Setup Pelican panel
+   - [X] Install using composer (After working 5 hours on a known error)
+   - [ ] Create module for th panel with required dependencies 
+   - [ ] Setup sqlite 
+   - [ ] Create NGINX module for Pelican panel
+   - [ ] Setup Pelican panel itself 
+- [ ] Install Docker 
+  - [ ] Start Docker on boot
+  - [ ] Enable Swap for Docker
+- [ ] Setup Pelican wings
+  - [ ] Install Wings Docker container
+  - [ ] Turn Wings into a service
 - [ ] Test game servers 
 - [ ] Fix NAS and mountpoints
 - [ ] Setup Plex
