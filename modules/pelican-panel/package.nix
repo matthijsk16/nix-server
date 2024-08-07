@@ -25,8 +25,6 @@ stdenv.mkDerivation rec {
   installPhase = ''
     composer config -g repo.packagist composer https://packagist.org
     cd $out/var/www/pelican
-    mkdir $out/homeless-shelter
-    ln -s $out/homeless-shelter /homeless-shelter/
     composer update
     composer install --no-dev --optimize-autoloader -H
   '';
