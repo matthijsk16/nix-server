@@ -19,7 +19,7 @@ in
         "kaasbois.nl" = {
           # addSSL = true;
           # enableACME = true;
-          root = "./";
+          root = "/home/bois/nix-server/modules/nginx/";
         };
       };
     };
