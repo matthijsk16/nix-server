@@ -13,7 +13,7 @@ NixOS server configuration files
 - [ ] Setup Pelican panel
    - [X] Install using composer (After working 5 hours on a known error)
    - [ ] Create module for th panel with required dependencies 
-   - [ ] Setup sqlite 
+   - [ ] Setup sqlite [Using home-manager](https://discourse.nixos.org/t/using-home-manager-to-create-a-sqlite-database/18872)
    - [ ] Create NGINX module for Pelican panel
    - [ ] Setup Pelican panel itself 
 - [ ] Install Docker 
