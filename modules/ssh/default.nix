@@ -6,7 +6,7 @@ in
   options.modules.ssh = {
     enable = lib.mkEnableOption "ssh";
 
-    passwordAuthentication = mkOption {
+    passwordAuthentication = lib.mkOption {
       type = types.bool;
       default = true;
       description = ''
