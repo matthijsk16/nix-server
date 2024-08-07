@@ -24,7 +24,7 @@ php83.buildComposerProject (finalAttrs: {
       zip
       intl
       sqlite3
-      fpm
+      # fpm
     ]));
   };
 
