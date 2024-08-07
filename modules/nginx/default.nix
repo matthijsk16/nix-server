@@ -15,6 +15,7 @@ in
     
     services.nginx = {
       enable = true;
+      serviceConfig.ProtectHome = "read-only";
       virtualHosts = {
         "kaasbois.nl" = {
           # addSSL = true;
