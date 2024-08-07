@@ -24,10 +24,9 @@ stdenv.mkDerivation rec {
 
   installPhase = ''
     composer config -g repo.packagist composer https://packagist.org
-    echo $(ls $out/var/www/pelican)
     cd $out/var/www/pelican
     composer update
-    composer install --no-dev --optimize-autoloader -H
+    sudo composer install --no-dev --optimize-autoloader -H
   '';
 
   propagatedBuildInputs = with pkgs; [
