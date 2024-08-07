@@ -26,7 +26,7 @@ stdenv.mkDerivation rec {
     composer config -g repo.packagist composer https://packagist.org
     cd $out/var/www/pelican
     composer update
-    composer install --no-dev --optimize-autoloader -H
+    composer install --no-dev --optimize-autoloader --working-dir=$out/var/www/pelican
   '';
 
   propagatedBuildInputs = with pkgs; [

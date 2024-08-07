@@ -11,12 +11,10 @@ php83.buildComposerProject (finalAttrs: {
     hash = "sha256-h0+6rDy7U24XEdqAnfd8Q77VE8Ji2llSxy/vQawPQw4=";
   };
 
-  buildInputs = [ fpm ];
-
   php83 = php83.buildEnv {
     extensions = ({ enabled, all }: enabled ++ (with all; [
       gd
-      pdo_mysql
+      mysqli
       mbstring
       bcmath
       xml
