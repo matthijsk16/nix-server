@@ -23,7 +23,10 @@ stdenv.mkDerivation rec {
   '';
 
   installPhase = ''
+    cd $out/var/www/
+    echo "Running composer update"
     composer update
+    echo "Installing Pelican Panel"
     composer install --no-dev --optimize-autoloader
   '';
 
