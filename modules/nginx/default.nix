@@ -18,7 +18,7 @@ in
         "kaasbois.nl" = {
           # addSSL = true;
           # enableACME = true;
-          root = ".";
+          root = "./";
         };
       };
     };

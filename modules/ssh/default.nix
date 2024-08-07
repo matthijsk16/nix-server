@@ -1,5 +1,4 @@
 { inputs, lib, config, pkgs, ... }:
-with lib;
 let
   cfg = config.modules.ssh;
 in
@@ -16,7 +15,7 @@ in
     };
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     services.openssh = {
         enable = true;
         ports = [ 22 ];
