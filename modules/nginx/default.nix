@@ -3,17 +3,8 @@ let
   cfg = config.modules.nginx;
 in
 {
-
-  options = {
-    services.nginx = {
-
-      enable = lib.mkEnableOption "Enable nginx";
-
-      virtualHosts = lib.mkOption {
-        type = lib.types.attrsOf (lib.types.attrsOf (lib.types.attrsOf lib.types.str));
-        default = {};
-      };
-    };
+  options.modules.nginx = {
+    enable = lib.mkEnableOption "Enable nginx";
   };
 
   config = lib.mkIf cfg.enable {
