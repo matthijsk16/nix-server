@@ -2,6 +2,8 @@
 with lib;
 let
   cfg = config.modules.nginx.pelican-panel;
+  hostname = "panel.kaasbois.nl";
+  port = 81;
 in
 {
   options.modules.nginx.pelican-panel = {
@@ -9,10 +11,13 @@ in
   };
 
   config = mkIf cfg.enable {
-    services.nginx.virtualHosts."panel.kaasbois.nl" = {
+    networking.firewall.allowedTCPPorts = [ port ];
+    services.nginx.virtualHosts.hostname = {
+        servername = hostname;
+        listen = [{ port = port; addr="0.0.0.0"; ssl=false; }];
         # addSSL = true;
         # enableACME = true;
-        root = "/var/www/panel.kaasbois.nl/";
+        root = "/var/www/${hostname}/";
     };
   };
 }

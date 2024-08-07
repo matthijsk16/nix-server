@@ -2,6 +2,8 @@
 with lib;
 let
   cfg = config.modules.nginx.index;
+  hostname = "kaasbois.nl";
+  port = 80;
 in
 {
   options.modules.nginx.index = {
@@ -9,10 +11,13 @@ in
   };
 
   config = mkIf cfg.enable {
-    services.nginx.virtualHosts."kaasbois.nl" = {
+    networking.firewall.allowedTCPPorts = [ port ];
+    services.nginx.virtualHosts.hostname = {
+        servername = hostname;
+        listen = [{ port = port; addr="0.0.0.0"; ssl=false; }];
         # addSSL = true;
         # enableACME = true;
-        root = "/var/www/kaasbois.nl/";
+        root = "/var/www/${hostname}/";
     };
   };
 }
