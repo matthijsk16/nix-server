@@ -11,7 +11,7 @@ in
 
   options.modules.nginx = {
     enable = mkEnableOption "Enable nginx";
-  };
+};
 
   config = mkIf cfg.enable {
     services.nginx.enable = true;
