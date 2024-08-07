@@ -23,6 +23,7 @@ stdenv.mkDerivation rec {
   '';
 
   installPhase = ''
+    composer update
     composer install --no-dev --optimize-autoloader
   '';
 
