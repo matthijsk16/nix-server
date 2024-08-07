@@ -13,7 +13,7 @@ NixOS server configuration files
   - [ ] Create SSL Certificate(s) with auto renewal 
 - [ ] Setup Pelican panel
    - [X] Install using composer (After working 5 hours on a known error)
-   - [ ] Create module for th panel with required dependencies 
+   - [ ] Create module for the panel with required dependencies 
    - [ ] Setup sqlite [Using home-manager](https://discourse.nixos.org/t/using-home-manager-to-create-a-sqlite-database/18872)
    - [ ] Create NGINX module for Pelican panel
    - [ ] Setup Pelican panel itself 
@@ -28,6 +28,7 @@ NixOS server configuration files
 - [ ] Setup Plex
 - [ ] Setup Plexx
 - [ ] Test Plex
+- [ ] DNS configuration
 - [ ] Backup server files 
 - [ ] Initial deploy and test 
 - [ ] Restore gameservers
