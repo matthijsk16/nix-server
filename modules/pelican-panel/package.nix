@@ -8,7 +8,7 @@ php83.buildComposerProject (finalAttrs: {
     owner = "pelican-dev";
     repo = "panel";
     rev = finalAttrs.version;  # v1.0.0-beta7
-    hash = "sha256-VcQRSss2dssfkJ+iUb5qT+FJ10GHiFDzySigcmuVI+8=";
+    hash = "sha256-h0+6rDy7U24XEdqAnfd8Q77VE8Ji2llSxy/vQawPQw4=";
   };
 
   php83 = php83.buildEnv {
