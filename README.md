@@ -9,7 +9,7 @@ NixOS server configuration files
 - [X] Cloudflare tunnel (Not possible without clientside install!)
 - [ ] Setup basic NGINX server
   - [X] Create basic homepage 
-  - [ ] Make NGINX Modular
+  - [X] Make NGINX Modular
   - [ ] Create SSL Certificate(s) with auto renewal 
 - [ ] Setup Pelican panel
    - [X] Install using composer (After working 5 hours on a known error)
