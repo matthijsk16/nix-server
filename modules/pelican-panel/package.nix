@@ -1,4 +1,4 @@
-{ php83, fetchFromGitHub }:
+{ lib, php83, fetchFromGitHub }:
 
 php83.buildComposerProject (finalAttrs: {
   pname = "ppelican-panel";
