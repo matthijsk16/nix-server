@@ -15,7 +15,7 @@ php82.buildComposerProject (finalAttrs: {
     extensions = ({ enabled, all }: enabled ++ (with all; [
       gd
       mysqli
-      mbstrin
+      mbstring
       bcmath
       xml
       curl
