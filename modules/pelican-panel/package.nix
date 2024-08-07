@@ -26,7 +26,25 @@ stdenv.mkDerivation rec {
     composer install --no-dev --optimize-autoloader
   '';
 
-  propagatedBuildInputs = with pkgs; [ php83 php83Packages.composer mysql84 ];
+  propagatedBuildInputs = with pkgs; [ 
+    php83
+    (php83.buildEnv {
+      extensions = ({enabled, all}: enabled ++ (with all; [
+        gd
+        mysql
+        mbstring
+        bcmath
+        xml
+        curl
+        zip
+        intl
+        sqlite3
+        fpm
+      ]))
+    })
+    php83Packages.composer 
+    mysql84 
+  ];
 
   meta = with lib; {
     description = ''
