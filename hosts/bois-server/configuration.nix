@@ -4,7 +4,7 @@
 
 { config, pkgs, ... }:
 let
-pelican-panel = pkgs.callPackage ../../modules/pelican-panel/packageOLD.nix {};
+pelican-panel = pkgs.callPackage ../../modules/pelican-panel/package.nix {};
 in
 {
   imports = [
