@@ -22,7 +22,7 @@ in
   # };
 
   environment.systemPackages = with pkgs; [
-    # pelican-panel
+    pelican-panel
   ];
 
   # Configure network proxy if necessary
