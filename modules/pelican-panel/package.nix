@@ -41,7 +41,7 @@ stdenv.mkDerivation rec {
         sqlite3
         fpm
       ]))
-    })
+    };)
     php83Packages.composer 
     mysql84 
   ];
