@@ -25,6 +25,8 @@ php83.buildComposerProject (finalAttrs: {
     ]));
   };
 
+  composerStrictValidation = true;
+  
   # The composer vendor hash
   vendorHash = lib.fakeHash;
 
