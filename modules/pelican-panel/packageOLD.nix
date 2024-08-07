@@ -35,7 +35,7 @@ stdenv.mkDerivation rec {
     mysql84 
   ] ++ (with pkgs.php83Extensions; [
         gd
-        mysql
+        mysqli
         mbstring
         bcmath
         xml
@@ -43,7 +43,7 @@ stdenv.mkDerivation rec {
         zip
         intl
         sqlite3
-        fpm
+        # fpm
   ]);
 
   meta = with lib; {
