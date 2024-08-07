@@ -1,6 +1,6 @@
-{ lib, php82, fetchFromGitHub }:
+{ lib, php83, fetchFromGitHub }:
 
-php82.buildComposerProject (finalAttrs: {
+php83.buildComposerProject (finalAttrs: {
   pname = "ppelican-panel";
   version = "v1.0.0-beta7";
 
@@ -11,7 +11,7 @@ php82.buildComposerProject (finalAttrs: {
     hash = "sha256-h0+6rDy7U24XEdqAnfd8Q77VE8Ji2llSxy/vQawPQw4=";
   };
 
-  php82 = php82.buildEnv {
+  php83 = php83.buildEnv {
     extensions = ({ enabled, all }: enabled ++ (with all; [
       gd
       mysqli
