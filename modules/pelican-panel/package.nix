@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
   '';
 
   installPhase = ''
-    cd $out/var/www/
+    cd $out/var/www/pelican
     echo "Running composer update"
     composer update
     echo "Installing Pelican Panel"
