@@ -1,13 +1,14 @@
 { inputs, lib, config, pkgs, ... }:
+with lib;
 let
   cfg = config.modules.nginx;
 in
 {
   options.modules.nginx = {
-    enable = lib.mkEnableOption "Enable nginx";
+    enable = mkEnableOption "Enable nginx";
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     # Open ports in the firewall.
     networking.firewall.allowedTCPPorts = [ 80 443 ];
     # networking.firewall.allowedUDPPorts = [ ... ];
