@@ -28,7 +28,7 @@ php83.buildComposerProject (finalAttrs: {
   composerStrictValidation = false;
   
   # The composer vendor hash
-  vendorHash = lib.fakeHash;
+  vendorHash = "sha256-6r7waA3kGOBWGtuzjLc7FMsHEUdNgv+wmj7vCdCRbt0=";
 
   # If the composer.lock file is missing from the repository, add it:
   # composerLock = ./path/to/composer.lock;
