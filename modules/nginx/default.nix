@@ -14,6 +14,10 @@
   };
 
   config = mkIf cfg.enable {
+    # Open ports in the firewall.
+    networking.firewall.allowedTCPPorts = [ 80 443 ];
+    # networking.firewall.allowedUDPPorts = [ ... ];
+    
     services.nginx = {
       enable = true;
       virtualHosts = {
