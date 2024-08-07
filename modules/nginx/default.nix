@@ -1,6 +1,6 @@
 { inputs, lib, config, pkgs, ... }:
 let
-  cfg = config.services.nginx;
+  cfg = config.modules.nginx;
 in
 {
 
