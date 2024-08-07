@@ -14,7 +14,7 @@ in
   config = mkIf cfg.enable {
     networking.firewall.allowedTCPPorts = [ port ];
     services.nginx.virtualHosts."${serverName}" = {
-        serverName = hostname;
+        inherit serverName;
         listen = [{ port = port; addr="0.0.0.0"; ssl=false; }];
         # addSSL = true;
         # enableACME = true;
