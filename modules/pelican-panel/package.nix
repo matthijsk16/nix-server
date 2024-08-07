@@ -31,16 +31,16 @@ stdenv.mkDerivation rec {
     php83Packages.composer 
     mysql84 
   ] ++ (with pkgs.php83Extensions; [
-        php-gd
-        php-mysql
-        # mbstring
-        # bcmath
-        # xml
-        # curl
-        # zip
-        # intl
-        # sqlite3
-        # fpm
+        gd
+        mysql
+        mbstring
+        bcmath
+        xml
+        curl
+        zip
+        intl
+        sqlite3
+        fpm
   ]);
 
   meta = with lib; {
