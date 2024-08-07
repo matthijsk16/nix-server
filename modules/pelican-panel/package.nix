@@ -1,4 +1,8 @@
-{ stdenv, lib, fetchurl, gnutar, pkgs }:
+{ stdenv, lib, fetchurl, curl, gnutar, pkgs }:
+
+
+# with import <nixpkgs> { };
+
 # pkgs.php83Packages.composer
 stdenv.mkDerivation rec {
   pname = "pelican-panel";
@@ -10,7 +14,7 @@ stdenv.mkDerivation rec {
   };
 
   dontBuild = true;
-  buildInputs = [ gnutar ];
+  buildInputs = [ curl gnutar ];
 
   unpackPhase = ''
     mkdir -p $out/var/www/pelican
