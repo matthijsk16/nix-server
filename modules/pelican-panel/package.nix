@@ -28,8 +28,8 @@ php83.buildComposerProject (finalAttrs: {
 
   # The composer vendor hash
   # vendorHash = "sha256-86s/F+/5cBAwBqZ2yaGRM5rTGLmou5//aLRK5SA0WiQ=";
-  # vendorHash = "sha256-h0+6rDy7U24XEdqAnfd8Q77VE8Ji2llSxy/vQawPQw4=";
-  vendorHash = lib.fakeSha256;
+  vendorHash = "sha256-h0+6rDy7U24XEdqAnfd8Q77VE8Ji2llSxy/vQawPQw4=";
+  # vendorHash = lib.fakeSha256;
 
   # If the composer.lock file is missing from the repository, add it:
   # composerLock = ./path/to/composer.lock;
