@@ -12,7 +12,7 @@ in
 
   config = mkIf cfg.enable {
     networking.firewall.allowedTCPPorts = [ port ];
-    services.nginx.virtualHosts.hostname = {
+    services.nginx.virtualHosts."${hostname}" = {
         servername = hostname;
         listen = [{ port = port; addr="0.0.0.0"; ssl=false; }];
         # addSSL = true;
